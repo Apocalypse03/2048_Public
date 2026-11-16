@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash (starting window) background per theme id: AppThemes.resolve(id, variant).background.
+     Also splash_accent_<id> (logo fill = accent) and splash_on_accent_<id> (logo glyphs = onAccent with the logo's 0.94 alpha baked in).
+     Generated from AppThemes and kept in sync by SplashThemeTest. This file: dark variant. -->
+<resources>
+    <color name="splash_bg_0">#FF22191C</color>
+    <color name="splash_bg_1">#FF191919</color>
+    <color name="splash_bg_2">#FF333333</color>
+    <color name="splash_bg_3">#FF0D161D</color>
+    <color name="splash_bg_4">#FF171F23</color>
+    <color name="splash_bg_5">#FF111111</color>
+    <color name="splash_bg_6">#FF271B1D</color>
+    <color name="splash_bg_7">#FF1D1926</color>
+    <color name="splash_bg_8">#FF18151D</color>
+    <color name="splash_bg_9">#FF1B1722</color>
+    <color name="splash_bg_10">#FF28252C</color>
+    <color name="splash_bg_11">#FF141518</color>
+    <color name="splash_bg_12">#FF141518</color>
+    <color name="splash_bg_13">#FF2B1C1E</color>
+    <color name="splash_bg_14">#FF08172B</color>
+    <color name="splash_bg_15">#FF061A20</color>
+    <color name="splash_bg_16">#FF23080A</color>
+    <color name="splash_accent_0">#FFE095B6</color>
+    <color name="splash_accent_1">#FF988C62</color>
+    <color name="splash_accent_2">#FFD48037</color>
+    <color name="splash_accent_3">#FF459FD1</color>
+    <color name="splash_accent_4">#FF7FABC4</color>
+    <color name="splash_accent_5">#FF359734</color>
+    <color name="splash_accent_6">#FFDA96A1</color>
+    <color name="splash_accent_7">#FFA18CD1</color>
+    <color name="splash_accent_8">#FF8576A1</color>
+    <color name="splash_accent_9">#FF957FBF</color>
+    <color name="splash_accent_10">#FFDCCDF2</color>
+    <color name="splash_accent_11">#FF717388</color>
+    <color name="splash_accent_12">#FF717388</color>
+    <color name="splash_accent_13">#FFEE9CA7</color>
+    <color name="splash_accent_14">#FF2F80ED</color>
+    <color name="splash_accent_15">#FF2193B0</color>
+    <color name="splash_accent_16">#FFC22E35</color>
+    <color name="splash_on_accent_0">#F022191C</color>
+    <color name="splash_on_accent_1">#F0191919</color>
+    <color name="splash_on_accent_2">#F0333333</color>
+    <color name="splash_on_accent_3">#F00D161D</color>
+    <color name="splash_on_accent_4">#F0171F23</color>
+    <color name="splash_on_accent_5">#F0111111</color>
+    <color name="splash_on_accent_6">#F0271B1D</color>
+    <color name="splash_on_accent_7">#F01D1926</color>
+    <color name="splash_on_accent_8">#F018151D</color>
+    <color name="splash_on_accent_9">#F01B1722</color>
+    <color name="splash_on_accent_10">#F028252C</color>
+    <color name="splash_on_accent_11">#F0141518</color>
+    <color name="splash_on_accent_12">#F0141518</color>
+    <color name="splash_on_accent_13">#F02B1C1E</color>
+    <color name="splash_on_accent_14">#F008172B</color>
+    <color name="splash_on_accent_15">#F0061A20</color>
+    <color name="splash_on_accent_16">#F023080A</color>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Splash icon colours, see splash_themes.xml. -->
+    <attr name="splashAccent" format="color" />
+    <attr name="splashOnAccent" format="color" />
+</resources>

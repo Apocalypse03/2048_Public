@@ -1,0 +1,10 @@
+Third-party notices
+
+Icons (res/drawable/ic_palette, ic_arrow_back, ic_chevron_left, ic_chevron_right,
+ic_settings, ic_cart, ic_list, ic_info, ic_undo): path data taken from Google Material Icons
+(palette, arrow_back, chevron_left, chevron_right, settings, shopping_cart,
+format_list_bulleted, info, undo).
+Copyright Google LLC. Licensed under the Apache License, Version 2.0
+(https://www.apache.org/licenses/LICENSE-2.0).
+
+ic_crown: original, drawn for this project.

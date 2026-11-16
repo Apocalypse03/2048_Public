@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One splash style per theme id; names are persisted by the system, keep them stable. See SplashThemes. -->
+<resources>
+    <style name="Theme.Game2048.Splash0" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_0</item>
+        <item name="android:statusBarColor">@color/splash_bg_0</item>
+        <item name="android:navigationBarColor">@color/splash_bg_0</item>
+        <item name="splashAccent">@color/splash_accent_0</item>
+        <item name="splashOnAccent">@color/splash_on_accent_0</item>
+    </style>
+    <style name="Theme.Game2048.Splash1" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_1</item>
+        <item name="android:statusBarColor">@color/splash_bg_1</item>
+        <item name="android:navigationBarColor">@color/splash_bg_1</item>
+        <item name="splashAccent">@color/splash_accent_1</item>
+        <item name="splashOnAccent">@color/splash_on_accent_1</item>
+    </style>
+    <style name="Theme.Game2048.Splash2" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_2</item>
+        <item name="android:statusBarColor">@color/splash_bg_2</item>
+        <item name="android:navigationBarColor">@color/splash_bg_2</item>
+        <item name="splashAccent">@color/splash_accent_2</item>
+        <item name="splashOnAccent">@color/splash_on_accent_2</item>
+    </style>
+    <style name="Theme.Game2048.Splash3" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_3</item>
+        <item name="android:statusBarColor">@color/splash_bg_3</item>
+        <item name="android:navigationBarColor">@color/splash_bg_3</item>
+        <item name="splashAccent">@color/splash_accent_3</item>
+        <item name="splashOnAccent">@color/splash_on_accent_3</item>
+    </style>
+    <style name="Theme.Game2048.Splash4" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_4</item>
+        <item name="android:statusBarColor">@color/splash_bg_4</item>
+        <item name="android:navigationBarColor">@color/splash_bg_4</item>
+        <item name="splashAccent">@color/splash_accent_4</item>
+        <item name="splashOnAccent">@color/splash_on_accent_4</item>
+    </style>
+    <style name="Theme.Game2048.Splash5" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_5</item>
+        <item name="android:statusBarColor">@color/splash_bg_5</item>
+        <item name="android:navigationBarColor">@color/splash_bg_5</item>
+        <item name="splashAccent">@color/splash_accent_5</item>
+        <item name="splashOnAccent">@color/splash_on_accent_5</item>
+    </style>
+    <style name="Theme.Game2048.Splash6" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_6</item>
+        <item name="android:statusBarColor">@color/splash_bg_6</item>
+        <item name="android:navigationBarColor">@color/splash_bg_6</item>
+        <item name="splashAccent">@color/splash_accent_6</item>
+        <item name="splashOnAccent">@color/splash_on_accent_6</item>
+    </style>
+    <style name="Theme.Game2048.Splash7" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_7</item>
+        <item name="android:statusBarColor">@color/splash_bg_7</item>
+        <item name="android:navigationBarColor">@color/splash_bg_7</item>
+        <item name="splashAccent">@color/splash_accent_7</item>
+        <item name="splashOnAccent">@color/splash_on_accent_7</item>
+    </style>
+    <style name="Theme.Game2048.Splash8" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_8</item>
+        <item name="android:statusBarColor">@color/splash_bg_8</item>
+        <item name="android:navigationBarColor">@color/splash_bg_8</item>
+        <item name="splashAccent">@color/splash_accent_8</item>
+        <item name="splashOnAccent">@color/splash_on_accent_8</item>
+    </style>
+    <style name="Theme.Game2048.Splash9" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_9</item>
+        <item name="android:statusBarColor">@color/splash_bg_9</item>
+        <item name="android:navigationBarColor">@color/splash_bg_9</item>
+        <item name="splashAccent">@color/splash_accent_9</item>
+        <item name="splashOnAccent">@color/splash_on_accent_9</item>
+    </style>
+    <style name="Theme.Game2048.Splash10" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_10</item>
+        <item name="android:statusBarColor">@color/splash_bg_10</item>
+        <item name="android:navigationBarColor">@color/splash_bg_10</item>
+        <item name="splashAccent">@color/splash_accent_10</item>
+        <item name="splashOnAccent">@color/splash_on_accent_10</item>
+    </style>
+    <style name="Theme.Game2048.Splash11" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_11</item>
+        <item name="android:statusBarColor">@color/splash_bg_11</item>
+        <item name="android:navigationBarColor">@color/splash_bg_11</item>
+        <item name="splashAccent">@color/splash_accent_11</item>
+        <item name="splashOnAccent">@color/splash_on_accent_11</item>
+    </style>
+    <style name="Theme.Game2048.Splash12" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_12</item>
+        <item name="android:statusBarColor">@color/splash_bg_12</item>
+        <item name="android:navigationBarColor">@color/splash_bg_12</item>
+        <item name="splashAccent">@color/splash_accent_12</item>
+        <item name="splashOnAccent">@color/splash_on_accent_12</item>
+    </style>
+    <style name="Theme.Game2048.Splash13" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_13</item>
+        <item name="android:statusBarColor">@color/splash_bg_13</item>
+        <item name="android:navigationBarColor">@color/splash_bg_13</item>
+        <item name="splashAccent">@color/splash_accent_13</item>
+        <item name="splashOnAccent">@color/splash_on_accent_13</item>
+    </style>
+    <style name="Theme.Game2048.Splash14" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_14</item>
+        <item name="android:statusBarColor">@color/splash_bg_14</item>
+        <item name="android:navigationBarColor">@color/splash_bg_14</item>
+        <item name="splashAccent">@color/splash_accent_14</item>
+        <item name="splashOnAccent">@color/splash_on_accent_14</item>
+    </style>
+    <style name="Theme.Game2048.Splash15" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_15</item>
+        <item name="android:statusBarColor">@color/splash_bg_15</item>
+        <item name="android:navigationBarColor">@color/splash_bg_15</item>
+        <item name="splashAccent">@color/splash_accent_15</item>
+        <item name="splashOnAccent">@color/splash_on_accent_15</item>
+    </style>
+    <style name="Theme.Game2048.Splash16" parent="Theme.Game2048">
+        <item name="android:windowBackground">@color/splash_bg_16</item>
+        <item name="android:statusBarColor">@color/splash_bg_16</item>
+        <item name="android:navigationBarColor">@color/splash_bg_16</item>
+        <item name="splashAccent">@color/splash_accent_16</item>
+        <item name="splashOnAccent">@color/splash_on_accent_16</item>
+    </style>
+</resources>

@@ -1,0 +1,114 @@
+# File map
+
+- 2048_vertical.py — original Python 2048 game; behavioural oracle for the port; never edit
+- best_score.txt — best score persisted by 2048_vertical.py
+- docs/ — project documentation and audits (plans, design, repo audits)
+- docs/DESIGN_AUDIT.md — design audit notes
+- docs/IMPLEMENTATION_PLAN.md — implementation plan
+- docs/REFERENCE_REPO_AUDIT.md — audit of reference repository
+- docs/REPO_AUDIT.md — audit of this repository
+- Reference Pic/ — reference screenshots and logo (homepage, grid, progress, skin menu, 2048_logo.svg)
+- MASTER PROJECT PROMPT.md — master project prompt
+- CHANGELOG.md — release notes, Keep a Changelog style
+- STYLE_ARCHITECTURE.md — theme schema (ThemeSpec with light/dark variants), getActiveVariant, live dark-mode switching, theme id migration, counterpart generation
+- tools/golden/ — golden-test generator derived from the original game (created by another task)
+- android/ — Gradle project root (Android port)
+- android/settings.gradle.kts — module list (:app, :game), repository rules
+- android/build.gradle.kts — top-level plugin declarations (apply false)
+- android/gradle/libs.versions.toml — version catalog, all pinned versions
+- android/gradle/wrapper/ — Gradle 9.8.2 wrapper (jar verified by SHA-256)
+- android/gradlew, android/gradlew.bat — Gradle wrapper launch scripts
+- android/gradle.properties — JVM args and AndroidX flags
+- android/game/ — pure-Kotlin game logic module (JVM, no Android deps)
+- android/game/src/main/kotlin/.../game/GameConfig.kt — board sizes (SIZE = 4 default, SIZES = 4, 6)
+- android/game/src/test/kotlin/.../game/GameConfigTest.kt — unit test for GameConfig
+- android/game/src/main/kotlin/.../game/Direction.kt — Direction enum (LEFT/RIGHT/UP/DOWN)
+- android/game/src/main/kotlin/.../game/Board.kt — immutable NxN board (N in GameConfig.SIZES, carries size) with value equality
+- android/game/src/main/kotlin/.../game/Rules.kt — move/hasLegalMoves/spawn/newGameBoard + MoveResult
+- android/game/src/main/kotlin/.../game/GameEngine.kt — GameEngine (incl. Princess Mode + undo history, move counter), GameState, GameStatus, UndoSnapshot
+- android/game/src/main/kotlin/.../game/MoveTrace.kt — TileMotion, Spawn, MoveTrace (mergedCells), traceMove: per-tile motion of a move for animation (§17)
+- android/game/src/test/kotlin/.../game/GoldenTest.kt — replays moves.json/legal.json oracle fixtures
+- android/game/src/test/kotlin/.../game/SpawnTest.kt — spawn and new-game statistical tests
+- android/game/src/test/kotlin/.../game/GameEngineTest.kt — engine and Board unit tests
+- android/game/src/test/kotlin/.../game/PrincessModeTest.kt — Princess Mode engine tests (swap, unlimited undo, exit status)
+- android/game/src/test/kotlin/.../game/SixBySixTest.kt — 6x6 board, rules and engine tests
+- android/game/src/test/kotlin/.../game/MoveCounterTest.kt — hidden move counter: moving moves, undo, swaps, new game, restore
+- android/game/src/test/kotlin/.../game/MoveTraceTest.kt — traceMove hand cases and property test vs Rules.move; GameEngine.lastMove
+- android/app/ — Android application module (Compose UI, package com.apocalypse03.game2048)
+- android/app/src/main/AndroidManifest.xml — manifest, single portrait MainActivity
+- android/app/src/main/kotlin/.../MainActivity.kt — Compose activity; builds AppViewModel via AppViewModel.Factory
+- android/app/src/main/res/ — themes, strings, colors, adaptive launcher icon and legacy PNGs
+- android/app/src/main/res/values-night/colors.xml — night window background (Default theme, dark variant)
+- android/app/src/test/kotlin/.../MainActivityTest.kt — Robolectric Compose test
+- android/app/src/test/kotlin/.../MainActivityRecreateTest.kt — Robolectric: board and screen survive activity recreation
+- android/app/build.gradle.kts — app module build config
+- android/app/proguard-rules.pro — R8 rules (no keep rules needed; release minified, debug-key signed)
+- android/app/src/main/assets/NOTICE.txt — Apache-2.0 credit for Material Icons path data; ic_crown origin
+- android/app/src/main/res/drawable/logo_2048_glyphs.xml — 2048 logo glyph VectorDrawable (path copied from Reference Pic/2048_logo.svg)
+- android/app/src/main/res/drawable/ic_*.xml — 9 icon VectorDrawables (palette, arrow_back, chevrons, settings, cart, list, info, undo)
+- android/app/src/main/res/drawable/ic_crown.xml — Princess Mode crown VectorDrawable (original)
+- android/app/src/main/kotlin/.../ui/ — Compose UI (P4 visual prototype)
+- android/app/src/main/kotlin/.../ui/AppViewModel.kt — screen, theme id, game mode selector, GameEngine + game state (4x4 or 6x6), game timer and lifecycle hooks, Princess Mode tap burst and tile selection; session save/restore via GameStore, screen in SavedStateHandle, per-mode Best/theme/mode via SettingsStore, Resume and confirm-new-game logic, Factory
+- android/app/src/main/kotlin/.../ui/GameMode.kt — GameMode enum: NORMAL (4x4, "Normal"), PLUS (6x6, "2048⁺")
+- android/app/src/main/kotlin/.../ui/data/SettingsStore.kt — SettingsStore (Best per mode, theme id, game mode, best win per mode), WinRecord, SharedPrefsSettingsStore, InMemorySettingsStore
+- android/app/src/main/kotlin/.../ui/data/GameStore.kt — SavedSession, GameStore, SharedPrefsGameStore (durable game session), InMemoryGameStore
+- android/app/src/main/kotlin/.../ui/data/GameResult.kt — GameResult (one finished game) and GameResults (stored format, sanitising, ordering, top-20 upsert)
+- android/app/src/main/kotlin/.../ui/AppRoot.kt — root composable: frame, Home/Game transition, palette button, theme bar, lifecycle start/stop to the timer
+- android/app/src/main/kotlin/.../ui/theme/AppTheme.kt — 17 ThemeSpecs, each with a light and a dark AppTheme (7 built-in + generated counterparts, 10 palettes via fromPalette / fromPaletteDark), ThemeVariant, getActiveVariant, migrateId, onAccent, derived colours, explicit tile ramp, LocalAppTheme, colour animation
+- android/app/src/main/kotlin/.../ui/components/RefFrame.kt — reference-frame scaling (rp/rsp), TapTarget, RefIcon, RefText
+- android/app/src/main/kotlin/.../ui/components/Logo2048.kt — themed 2048 logo composable
+- android/app/src/main/kotlin/.../ui/components/PillButton.kt — 330x100 outlined pill button (confirmation dialog, win screen)
+- android/app/src/main/kotlin/.../ui/components/ThemeBar.kt — palette toggle and horizontally scrollable theme bar (all themes, 7 visible, snap, pill-clipped visuals)
+- android/app/src/main/kotlin/.../ui/home/HomeScreen.kt — Home screen; bottom nav with press highlight (Settings, Results, Info)
+- android/app/src/main/kotlin/.../ui/info/InfoPanel.kt — Info panel modal (section 19): logo + "2048", version from BuildConfig, AUTHOR_HANDLE, Close pill
+- android/app/src/main/kotlin/.../ui/settings/SettingsScreen.kt — Settings screen (section 15): speed and intensity sliders (custom drawn, semantics set-progress), round vibration toggle, dimmed/disabled intensity block
+- android/app/src/main/kotlin/.../ui/results/ResultsScreen.kt — Results screen (stub: back arrow and title; final parameter list)
+- android/app/src/main/kotlin/.../ui/haptics/Haptics.kt — Haptics interface, NoHaptics, AndroidHaptics (system vibrator one-shot pulse)
+- android/app/src/main/kotlin/.../ui/game/GameScreen.kt — Game screen: score/best, hint, undo, key input, timer tap target, Princess crown, win overlay
+- android/app/src/main/kotlin/.../ui/game/GameInput.kt — swipeDirection and keyDirection mappings
+- android/app/src/main/kotlin/.../ui/game/BoardView.kt — NxN (4x4 / 6x6) board renderer with swipe detection; Princess tile taps and selection
+- android/app/src/main/kotlin/.../ui/game/ShowcaseBoard.kt — 2..4096 board (and 6x6 2..16384 ShowcaseBoard6) for previews and screenshots
+- android/app/src/main/kotlin/.../ui/timer/GameTimer.kt — MonotonicClock, SystemMonotonicClock, GameTimer stopwatch (with restore), formatElapsed
+- android/app/src/main/kotlin/.../ui/timer/TimerText.kt — rememberTimerText: timer label, per-second tick only while running and STARTED
+- android/app/src/test/kotlin/.../ui/UiTestSupport.kt — test helpers (setApp, setAppWithFontScale, tapSwatch, saveScreenshot)
+- android/app/src/test/kotlin/.../ui/AppFlowTest.kt — Robolectric UI flow tests
+- android/app/src/test/kotlin/.../ui/ResumeFlowTest.kt — Home Resume pill and new-game confirmation dialog flow
+- android/app/src/test/kotlin/.../ui/BoardGeometryTest.kt — board squareness/containment at 6 window sizes (incl. landscape, squat)
+- android/app/src/test/kotlin/.../ui/ScreenshotTest.kt — PNG screenshots to android/app/build/screenshots/
+- android/app/src/test/kotlin/.../ui/ThemeBarDismissTest.kt — outside-tap and back-key dismissal of the theme bar
+- android/app/src/test/kotlin/.../ui/AppViewModelTest.kt — ViewModel move/undo/new-game/theme tests (seeded Random)
+- android/app/src/test/kotlin/.../ui/GameplayTest.kt — Robolectric swipe, key, hint, undo and game-over tests
+- android/app/src/test/kotlin/.../ui/AppViewModelTimerTest.kt — timer state machine in the ViewModel (fake clock)
+- android/app/src/test/kotlin/.../ui/AppViewModelPersistenceTest.kt — GameStore restore (app restart), SavedStateHandle (process death), settings store, corrupt-data fallback (fake clock)
+- android/app/src/test/kotlin/.../ui/AppViewModelModeTest.kt — game modes in the ViewModel: selector bounds/persistence, 6x6 new game/resume/restore, per-mode Best, invalid sizes, 6x6 Princess swap
+- android/app/src/test/kotlin/.../ui/ModeUiTest.kt — Robolectric: mode selector, 36 tile nodes, 6x6 swipe and Princess tap
+- android/app/src/test/kotlin/.../ui/SettingsUiTest.kt — Settings screen: texts, slider snap/clamp/tap/drag/preview, toggle, disabled intensity, Home-to-Settings flow, font scale 1.3 fit
+- android/app/src/test/kotlin/.../ui/AppViewModelResumeTest.kt — hasGameInProgress, resumeGame, requestNewGame confirmation flow
+- android/app/src/test/kotlin/.../ui/AppViewModelWinTest.kt — win detection, win-pending freeze, Endless, new game from win, persistence, best-win record
+- android/app/src/test/kotlin/.../ui/WinScreenUiTest.kt — Robolectric: win overlay texts, Endless, New Game dialog, Back/Resume; labels fit at font scale 1.3
+- android/app/src/test/kotlin/.../ui/data/SharedPrefsGameStoreTest.kt — Robolectric: game session round-trip, clear, corrupt data
+- android/app/src/test/kotlin/.../ui/data/SharedPrefsSettingsStoreTest.kt — Robolectric: SharedPreferences defaults, round-trip, sanitising
+- android/app/src/test/kotlin/.../ui/data/SettingsExtrasStoreTest.kt — Robolectric: animation speed / vibration / results / next id keys, clamping, mistyped values, session game_id
+- android/app/src/test/kotlin/.../ui/data/GameResultsTest.kt — result list format, corrupt entries, ordering, top-20 upsert
+- android/app/src/test/kotlin/.../ui/AppViewModelSettingsTest.kt — Settings values and merge vibration in the ViewModel (fake Haptics)
+- android/app/src/test/kotlin/.../ui/AppViewModelResultsTest.kt — result recording, game ids, per-mode lists, restore without game_id
+- android/app/src/test/kotlin/.../ui/AppViewModelNavTest.kt — Settings / Results navigation, Results mode, SavedStateHandle restore
+- android/app/src/test/kotlin/.../ui/NavUiTest.kt — Robolectric: nav press highlight timing, a11y click, back arrow / system back on Settings and Results
+- android/app/src/test/kotlin/.../ui/AppViewModelPrincessTest.kt — Princess Mode in the ViewModel: tap burst, selection, swap/undo, timer, exits (fake clock)
+- android/app/src/test/kotlin/.../ui/AppViewModelMoveAnimationTest.kt — moveAnimation set by successful moves (growing seq), null after undo/new game/restore/Princess/Home/Resume
+- android/app/src/test/kotlin/.../ui/MoveAnimationUiTest.kt — Robolectric (test clock): tile slide position over time, merge value switch, speed 0 instant, move mid-animation, undo instant, swipe not blocked
+- android/app/src/test/kotlin/.../ui/PrincessModeUiTest.kt — Robolectric: timer taps enter, swipe ignored, tile swap + undo, crown exits
+- android/app/src/test/kotlin/.../ui/TimerLabelTest.kt — Robolectric: timer label ticks after a swipe, resets on New Game
+- android/app/src/test/kotlin/.../ui/timer/FakeClock.kt — test MonotonicClock
+- android/app/src/test/kotlin/.../ui/timer/GameTimerTest.kt — GameTimer run/stop/reset/restore tests
+- android/app/src/test/kotlin/.../ui/timer/FormatElapsedTest.kt — formatElapsed cases
+- android/app/src/test/kotlin/.../ui/game/SwipeDirectionTest.kt — swipeDirection unit tests
+- android/app/src/test/kotlin/.../ui/FontScaleTest.kt — labels follow font scale clamped to 1.0..1.3, fit at 1.3; tile text ignores it
+- android/app/src/test/kotlin/.../ui/WindowFitTest.kt — key nodes inside landscape 1280x800 / squat 411x600 windows; swatch hit areas at 360 dp
+- android/app/src/test/kotlin/.../ui/SafeDrawingInsetsTest.kt — content stays inside dispatched status-bar / cutout / nav-bar insets
+- android/app/src/test/kotlin/.../ui/theme/TileTextContrastTest.kt — tile text >= 3:1 contrast on every tile of every theme
+- android/app/src/test/kotlin/.../ui/theme/PaletteThemeTest.kt — theme specs (variants, order, id migration, generated counterparts), palette themes (base colours, ramp rule), built-in ramps unchanged
+- android/app/src/test/kotlin/.../ui/theme/ThemeContrastTest.kt — light-board contrast, onAccent, dark variant colours and ramps
+- android/app/src/test/kotlin/.../ui/InfoPanelUiTest.kt — Robolectric: Info opens the panel (logo, title, version, author); Close / scrim tap / Back dismiss; panel taps keep it; night/notnight variant pixels
+- android/app/src/test/kotlin/.../ui/ThemeVariantUiTest.kt — Robolectric: night/notnight render the dark/light variant, live uiMode switch, 17 swatches in both modes; MainActivity keeps itself on a uiMode change
+- android/app/src/test/kotlin/.../ui/ThemeBarScrollTest.kt — Robolectric: theme bar order/pitch at scroll 0, swatch y and right edge, header visible under open bar, swipe, select-and-persist all, initial scroll
